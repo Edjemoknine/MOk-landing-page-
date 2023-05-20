@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Effect WebSite</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <a href="" class="logo"><span>M</span>OKNINE</a>
+            <ul id="navbar">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Portfolio</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+            <div class="links">
+                <a href="#" class="shopping"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" id="menu"><i class="fas fa-bars"></i></a>
+            </div>
+        </nav>
+
+        <div class="text_box">
+            <p>I'M</p>
+            <h1>MOKNINE</h1>
+            <h3>I HELP COMPANIES MAKE A BEAUTIFUL WEBSITES</h3>
+            <div class="row">
+                <a href="#">Explore My Portfolio</a>
+                <a href="#">Connect With Me <i class="fas fa-arrow-right"></i></a>
+                <span>You Can Explore More About My Portfolio And <br />
+                            Personal Life Experiences Here.</span>
+            </div>
+        </div>
+
+        <div class="social">
+            <a href=""><i class="fab fa-dribbble"></i></a>
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+
+    </div>
+    <script>
+        let menu = document.querySelector('#menu');
+        let list = document.querySelector('#navbar');
+        menu.addEventListener('click', () => {
+            list.classList.toggle('open');
+
+        });
+    </script>
+</body>
+
+</html>

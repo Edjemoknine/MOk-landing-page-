@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url(../bg_1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    position: relative;
+}
+
+.logo {
+    cursor: pointer;
+    color: #fff;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+.logo span {
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.links a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    transition: .4s ease;
+}
+
+.links a:hover {
+    transform: scale(1.2);
+}
+
+.shopping {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#menu {
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 50%;
+}
+
+.text_box {
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+    overflow: hidden;
+}
+
+.text_box p {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.text_box h1 {
+    font-size: 190px;
+    line-height: 160px;
+    /* margin-left: -10px; */
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(../bg_1.jpg);
+    -webkit-background-clip: text;
+    background-position: -100% 0;
+    animation: back 3s linear infinite;
+}
+
+@keyframes back {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-postion: 100% 0;
+    }
+}
+
+.text_box h3 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.text_box .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.text_box a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border: 2Px solid #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    z-index: 3;
+}
+
+.text_box a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.text_box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(254, 254, 254, 0.5);
+    transition: .4s ease-in-out;
+    z-index: 1;
+}
+
+.text_box a:hover::before {
+    width: 100%;
+}
+
+.text_box a i {
+    margin-left: 5px;
+}
+
+.text_box span {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-left: 5PX;
+}
+
+.social {
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+}
+
+.social a {
+    text-decoration: none;
+    display: block;
+    margin: 20px 20px;
+    font-size: 25px;
+    color: white;
+    transition: .5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.social a:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+@media(max-width:767px) {
+    #menu {
+        display: inline-block;
+    }
+    #navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 250px;
+        height: 400px;
+        background-color: rgba(254, 254, 254, 0.5);
+        text-align: center;
+        z-index: 1000;
+        padding-top: 2rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
+    }
+    #navbar.open {
+        right: 0;
+    }
+    #navbar::before {
+        content: '';
+        position: absolute;
+        border-width: 10px;
+        border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+        border-style: solid;
+        top: -20px;
+        right: 0;
+    }
+    #navbar li {
+        display: block;
+        margin: 35px 0;
+    }
+    .text_box h1 {
+        font-size: 80px;
+        line-height: 120px;
+    }
+    .text_box h3 {
+        font-size: 30px;
+        max-width: 80%;
+    }
+    .social {
+        display: none;
+    }
+}
